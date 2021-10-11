@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+      <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    
+    <title>Karabut Game</title>
+  </head>
+  <style>
+
+
+html, body {
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#loading-screen {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: 1;
+ 	transition: 1s opacity;
+}
+
+#loading-screen.fade-out {
+    opacity: 0;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+    .best_score{
+      padding: 10px;
+      margin: 0px;
+      position: fixed;
+      left: 0;
+      
+      
+      vertical-align: top;
+      font-size: 80px;
+      
+      color: white;
+    }
+    .lost{
+      padding: 10px;
+      margin: 0px;
+      position: absolute;
+      /* left:50%; */
+      /* transform: translateX(50%); */
+      
+
+     
+      
+      
+      
+      font-size: 80px;
+      
+      color: pink;
+    }
+    .counter{
+      padding: 10px;
+      margin: 0px;
+      position: fixed;
+      right: 0;
+      
+      vertical-align: top;
+      font-size: 80px;
+      
+      color: white;
+    }
+    body{
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <body>
+    
+    <div id="app"></div>
+    <div class = "loading-container">
+    <div id="container">                     
+    </div>
+</div>
+
+
+
+
+
+    <script type="module" src="/main.js"></script>
+    <h1 id="counter" class="counter"></h1>
+    <h1 id="best_score" class="best_score"></h1>
+    <h1 id="lost" class="lost"></h1>
+    <section id="loading-screen">
+
+  <div id="loader"></div>
+
+</section>
+  </body>
+</html>
